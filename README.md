@@ -19,11 +19,19 @@ Install virtualbox:
 
     # Install the extensions for our version of virtualbox
     # http://alanthing.com/blog/2013/03/17/virtualbox-extension-pack-with-one-line/
-    export version=$(/usr/bin/vboxmanage -v) && export var1=$(echo ${version} | cut -d 'r' -f 1) && export var2=$(echo ${version} | cut -d 'r' -f 2) && export file="Oracle_VM_VirtualBox_Extension_Pack-${var1}-${var2}.vbox-extpack" && curl --silent --location http://download.virtualbox.org/virtualbox/${var1}/${file} -o ~/Downloads/${file} && VBoxManage extpack install ~/Downloads/${file} --replace && rm ~/Downloads/${file} && unset version var1 var2 file
+    export version=$(/usr/bin/vboxmanage -v) && \
+	export var1=$(echo ${version} | cut -d 'r' -f 1) && \
+	export var2=$(echo ${version} | cut -d 'r' -f 2) && \
+	export file="Oracle_VM_VirtualBox_Extension_Pack-${var1}-${var2}.vbox-extpack" && \
+	curl --silent --location http://download.virtualbox.org/virtualbox/${var1}/${file} -o ~/Downloads/${file} && \
+	VBoxManage extpack install ~/Downloads/${file} --replace && \
+	rm ~/Downloads/${file} && \
+	unset version var1 var2 file
 
 We use an Ubuntu 14.04 (LTS) vagrant box obtained from https://github.com/kraksoft/vagrant-box-ubuntu
 
-    vagrant box add ubuntu/trusty64 https://github.com/kraksoft/vagrant-box-ubuntu/releases/download/14.04/ubuntu-14.04-amd64.box
+    vagrant box add ubuntu/trusty64 \
+	    https://github.com/kraksoft/vagrant-box-ubuntu/releases/download/14.04/ubuntu-14.04-amd64.box
 
 
 ## Install our server using vagrant
