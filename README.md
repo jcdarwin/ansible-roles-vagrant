@@ -55,6 +55,14 @@ Ensure we can ssh normally:
 	# Use the vagrant-ssh ssh config
     ssh -F vagrant-ssh default
 
+Note that during provisioning, we write out an `ansible/hosts` file that looks somewhat like the following (depending on the settings in our `vagrant.yml`):
+
+	[whatever]
+	#127.0.0.1 ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=../.vagrant/machines/default/virtualbox/private_key
+	192.168.1.100 ansible_ssh_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=../vagrant/.vagrant/machines/default/virtualbox/private_key
+
+This lets ansible communicate with our box from this repo, as well as repos that are siblings of this one such as our [ansible-role-users](https://github.com/jcdarwin/ansible-role-users) role.
+
 
 ### Check that ansible can communicate with our vagrant box
 

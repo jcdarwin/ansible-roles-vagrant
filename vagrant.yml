@@ -7,4 +7,4 @@ server_domain: local.whatever
 ansible_inventory_dir: ansible
 ssh_port: 2222
 ssh_user: vagrant
-private_key: .vagrant/machines/default/virtualbox/private_key
+private_key: ../vagrant/.vagrant/machines/default/virtualbox/private_key
