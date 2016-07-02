@@ -1,0 +1,10 @@
+---
+box: ubuntu/trusty64
+ip_address: 192.168.1.100
+vm_name: whatever
+folder: site
+server_domain: local.whatever
+ansible_inventory_dir: ansible
+ssh_port: 2222
+ssh_user: vagrant
+private_key: .vagrant/machines/default/virtualbox/private_key
