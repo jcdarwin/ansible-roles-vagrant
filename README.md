@@ -85,7 +85,7 @@ by adding the following to our `Vagrantfile`:
         mount_options: ["dmode=775,fmode=664"]
 
 
-#### Private network
+### Private network
 
 *We can't get this working properly, so use port-forwarding instead*
 Ensure we can access our guest without have to port forward https, by adding
@@ -100,7 +100,7 @@ We'll also need a line in `/private/etc/hosts`:
 The above will let us access our guest at http://local.vagrant
 
 
-#### Port-forwarding
+### Port-forwarding
 
 If instead we want to use port forwarding instead of a private network:
 
