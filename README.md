@@ -28,10 +28,9 @@ Install virtualbox:
 	rm ~/Downloads/${file} && \
 	unset version var1 var2 file
 
-We use an Ubuntu 14.04 (LTS) vagrant box obtained from https://github.com/kraksoft/vagrant-box-ubuntu
+We use an Ubuntu 16.04 (LTS) vagrant box:
 
-    vagrant box add ubuntu/trusty64 \
-	    https://github.com/kraksoft/vagrant-box-ubuntu/releases/download/14.04/ubuntu-14.04-amd64.box
+    vagrant box add geerlingguy/ubuntu1604
 
 
 ## Install our server using vagrant

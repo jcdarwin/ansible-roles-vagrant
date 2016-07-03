@@ -1,8 +1,8 @@
 ---
-box: ubuntu/trusty64
+box: geerlingguy/ubuntu1604
 ip_address: 192.168.1.100
 vm_name: whatever
-folder: site
+public_folder: public
 server_domain: local.whatever
 ansible_inventory_dir: ansible
 ssh_port: 22

@@ -109,8 +109,8 @@ Vagrant.configure(2) do |config|
     v.customize ["modifyvm", :id, "--cpus", cpus]
   end
 
-  # Ensure our vhost folder is synched with the correct ownership and permissions
-  config.vm.synced_folder settings['folder'], "/var/www/site/current",
+  # Ensure our vhost public folder is synched with the correct ownership and permissions
+  config.vm.synced_folder settings['public_folder'], "/var/www/site/current/public",
     id: settings['vm_name'],
     owner: "www-data",
     group: "www-data",
