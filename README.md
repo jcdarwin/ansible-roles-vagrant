@@ -75,6 +75,11 @@ Check that we can ping our host:
     ansible all -m ping -i ansible/hosts -l whatever
     ansible -m shell -a 'free -m' whatever -i ansible/hosts
 
+Note that if you can't connect to the server using ansible, it could be because you've spun up a new vm with a different key.
+You will know this is the case if you see a meesage "REMOTE HOST IDENTIFICATION HAS CHANGED!" when you run the following:
+
+    ssh vagrant@127.0.0.1 -p 2222 -i .vagrant/machines/default/virtualbox/private_key
+
 If we want, we can add our public key to the server:
 
     cat ~/.ssh/id_rsa.pub | ssh -F vagrant-ssh default "cat >> ~/.ssh/authorized_keys"

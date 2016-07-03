@@ -120,7 +120,7 @@ Vagrant.configure(2) do |config|
   Dir.mkdir(settings['ansible_inventory_dir']) unless Dir.exist?(settings['ansible_inventory_dir'])
   File.open("#{settings['ansible_inventory_dir']}/hosts" ,'w') do |f|
     f.write "[#{settings['vm_name']}]\n"
-    f.write "#127.0.0.1 ansible_ssh_port=#{settings['ssh_port']} ansible_ssh_user=#{settings['ssh_user']} ansible_ssh_private_key_file=#{settings['private_key']}\n"
+    f.write "#127.0.0.1 ansible_ssh_port=2222 ansible_ssh_user=#{settings['ssh_user']} ansible_ssh_private_key_file=#{settings['private_key']}\n"
     f.write "#{settings['ip_address']} ansible_ssh_port=#{settings['ssh_port']} ansible_ssh_user=#{settings['ssh_user']} ansible_ssh_private_key_file=#{settings['private_key']}\n"
   end
 
