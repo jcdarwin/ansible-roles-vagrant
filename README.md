@@ -65,9 +65,7 @@ This lets ansible communicate with our box from this repo, as well as repos that
 
 ### Check that ansible can communicate with our vagrant box
 
-Install Ansible if you haven't already:
-
-    sudo pip install ansible
+Install Ansible if you haven't already, as [per the instructions](http://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/install/)
 
 Check that we can ping our host:
 
