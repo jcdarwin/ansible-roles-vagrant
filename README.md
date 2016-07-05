@@ -67,6 +67,10 @@ This lets ansible communicate with our box from this repo, as well as repos that
 
 Install Ansible if you haven't already, as [per the instructions](http://ansible-tips-and-tricks.readthedocs.io/en/latest/ansible/install/)
 
+We use the dev install, as a [recently-fixed issue](https://github.com/ansible/ansible/issues/13876) can cause failures in ansible:
+
+    pip install git+git://github.com/ansible/ansible.git@devel
+
 Check that we can ping our host:
 
     ansible -m ping all -i ansible/hosts
