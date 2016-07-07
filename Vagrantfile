@@ -76,6 +76,14 @@ Vagrant.configure(2) do |config|
   # Ensure we can access our guest without have to port forward https
   # You'll also need a line in /private/etc/hosts:
   # 192.168.33.66 local.whatever
+
+  # https://stefanwrobel.com/how-to-make-vagrant-performance-not-suck#toc_1
+  # https://www.vagrantup.com/docs/synced-folders/nfs.html
+  # Required for NFS to work, pick any local IP
+  #config.vm.network :private_network, ip: settings['ip_address']
+  # Use NFS for shared folders for better performance
+  #config.vm.synced_folder '.', '/vagrant', nfs: true
+
   config.vm.network "public_network", ip: settings['ip_address']
   	#,
 	#"forwarded_port", guest: 80, host: 8000   # http
